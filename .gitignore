@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data generated locally
+data/bronze/*
+data/silver/*
+data/checkpoints/*
+!data/bronze/.gitkeep
+!data/silver/.gitkeep
+!data/checkpoints/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Airflow
+airflow_home/
