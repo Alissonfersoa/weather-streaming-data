@@ -1,0 +1,11 @@
+pytest
+ruff
+requests
+PyYAML
+pydantic
+tenacity
+confluent-kafka
+duckdb
+psycopg[binary]
+pyarrow
+pandas
