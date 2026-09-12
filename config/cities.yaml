@@ -1,0 +1,25 @@
+cities:
+  - name: sao_jose_dos_campos
+    display_name: São José dos Campos
+    latitude: -23.1896
+    longitude: -45.8841
+
+  - name: sao_paulo
+    display_name: São Paulo
+    latitude: -23.5505
+    longitude: -46.6333
+
+  - name: rio_de_janeiro
+    display_name: Rio de Janeiro
+    latitude: -22.9068
+    longitude: -43.1729
+
+  - name: curitiba
+    display_name: Curitiba
+    latitude: -25.4284
+    longitude: -49.2733
+
+  - name: brasilia
+    display_name: Brasília
+    latitude: -15.7939
+    longitude: -47.8828
