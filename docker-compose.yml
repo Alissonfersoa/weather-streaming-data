@@ -38,7 +38,25 @@ services:
 
     networks:
       - weather-net
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile.producer
 
+    container_name: weather-producer
+
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: broker:19092
+      KAFKA_TOPIC_WEATHER_RAW: weather.raw
+      POLL_INTERVAL_SECONDS: 60
+
+    depends_on:
+      - broker
+
+    restart: unless-stopped
+
+    networks:
+      - weather-net
 
 networks:
   weather-net:
