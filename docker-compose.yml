@@ -107,7 +107,28 @@ services:
       - weather-net
 
     restart: unless-stopped
+  analytics-db:
+    image: postgres:16
 
+    container_name: weather-analytics-db
+
+    environment:
+      POSTGRES_DB: weather
+      POSTGRES_USER: weather
+      POSTGRES_PASSWORD: weather
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - analytics-postgres-data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/001-init.sql
+
+    networks:
+      - weather-net
+
+volumes:
+  analytics-postgres-data:
 networks:
   weather-net:
     name: weather-net
