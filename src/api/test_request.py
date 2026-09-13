@@ -1,4 +1,5 @@
 from pprint import pprint
+
 from src.api.open_meteo_client import OpenMateoClient
 
 client = OpenMateoClient()

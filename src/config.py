@@ -1,6 +1,8 @@
 from pathlib import Path
 from typing import Any
+
 import yaml
+
 
 def load_cities(config_path: str = "config/cities.yaml") -> list[dict[str, Any]]:
   path = Path(config_path)

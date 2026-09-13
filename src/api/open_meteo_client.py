@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 from typing import Any
+
 import requests
 from tenacity import retry, stop_after_attempt, wait_exponential
+
 
 class OpenMateoClient:
   URL = "https://api.open-meteo.com/v1/forecast"
