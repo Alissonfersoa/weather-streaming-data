@@ -57,6 +57,32 @@ services:
 
     networks:
       - weather-net
+  spark-bronze:
+    image: apache/spark:4.1.3
+
+    container_name: weather-spark-bronze
+
+    user: "0"
+
+    command:
+      [
+        "/opt/spark/bin/spark-submit",
+        "--packages",
+        "org.apache.spark:spark-sql-kafka-0-10_2.13:4.1.3",
+        "/opt/spark/work-dir/spark/bronze_stream.py"
+      ]
+
+    volumes:
+      - ./spark:/opt/spark/work-dir/spark
+      - ./data:/data
+
+    depends_on:
+      - broker
+
+    networks:
+      - weather-net
+
+    restart: unless-stopped
 
 networks:
   weather-net:
