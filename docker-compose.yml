@@ -137,6 +137,7 @@ services:
 
     environment:
       ANALYTICS_DB_DSN: postgresql://weather:weather@analytics-db:5432/weather
+      PYTHONPATH: /opt/airflow/project
 
     ports:
       - "8080:8080"
@@ -144,6 +145,7 @@ services:
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./src:/opt/airflow/project/src
+      - ./config:/opt/airflow/project/config
       - ./data:/data
       - airflow-home:/opt/airflow
 
