@@ -152,6 +152,18 @@ services:
 
     networks:
       - weather-net
+  metabase:
+    image: metabase/metabase:latest
+    container_name: weather-metabase
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - analytics-db
+
+    networks:
+      - weather-net
 
 networks:
   weather-net:
