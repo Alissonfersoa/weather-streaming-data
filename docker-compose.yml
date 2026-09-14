@@ -132,7 +132,7 @@ services:
       dockerfile: ./docker/airflow/Dockerfile
 
     container_name: weather-airflow
-
+    user: "0:0"
     command: standalone
 
     environment:
