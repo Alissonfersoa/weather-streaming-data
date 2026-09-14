@@ -1,0 +1,4 @@
+duckdb
+psycopg[binary]
+pyarrow
+pandas

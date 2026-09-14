@@ -126,9 +126,37 @@ services:
 
     networks:
       - weather-net
+  airflow:
+    build:
+      context: .
+      dockerfile: ./docker/airflow/Dockerfile
 
-volumes:
-  analytics-postgres-data:
+    container_name: weather-airflow
+
+    command: standalone
+
+    environment:
+      ANALYTICS_DB_DSN: postgresql://weather:weather@analytics-db:5432/weather
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./src:/opt/airflow/project/src
+      - ./data:/data
+      - airflow-home:/opt/airflow
+
+    depends_on:
+      - analytics-db
+
+    networks:
+      - weather-net
+
 networks:
   weather-net:
     name: weather-net
+
+volumes:
+  analytics-postgres-data:
+  airflow-home:
