@@ -8,51 +8,7 @@ The project consumes weather data from the **Open-Meteo API**, publishes events 
 
 ## Architecture
 
-```text
-                         REAL-TIME PIPELINE
-
-Open-Meteo API
-      │
-      ▼
-Python Producer
-      │
-      ▼
-Apache Kafka
-  weather.raw
-      │
-      ▼
-Spark Structured Streaming
-      │
-      ▼
-┌──────────────────────┐
-│    Bronze Layer      │
-│   Raw Parquet Data   │
-└──────────────────────┘
-      │
-      ▼
-Spark Structured Streaming
-      │
-      ▼
-┌──────────────────────┐
-│    Silver Layer      │
-│ Cleaned / Structured │
-│       Parquet        │
-└──────────────────────┘
-      │
-      ▼
-Apache Airflow
-      │
-      ▼
-DuckDB Aggregation
-      │
-      ▼
-PostgreSQL
-   Gold Layer
-      │
-      ▼
-Metabase
-   Dashboards
-```
+![weather-streaming-data](imgs/pipeline-arch.png)
 
 The platform also supports a separate historical ingestion path:
 
