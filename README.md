@@ -660,4 +660,5 @@ The project also demonstrates how **streaming and batch workloads can coexist in
 **Alisson Batista**
 
 Data Engineering portfolio project focused on building production-inspired data pipelines using open-source technologies.
+
 ---
