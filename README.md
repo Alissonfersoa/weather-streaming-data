@@ -332,6 +332,10 @@ Deterministic filenames allow the same city/date backfill to overwrite its previ
 
 Apache Airflow is responsible for scheduled analytical workloads and manual historical processing.
 
+![weather-streaming-data](imgs/airflow_dag.png)
+
+![weather-streaming-data](imgs/airflow_dag1.png)
+
 The project includes workflows for:
 
 ### Gold Pipeline
@@ -367,6 +371,12 @@ This keeps backfills outside the continuous streaming ingestion path.
 PostgreSQL acts as the serving layer for analytical workloads.
 
 Metabase connects directly to the Gold database and can be used to create dashboards for metrics such as:
+
+![weather-streaming-data](imgs/dashboard-metabase1.png)
+
+![weather-streaming-data](imgs/dashboard-metabase2.png)
+
+![weather-streaming-data](imgs/dashboard-metabase3.png)
 
 * Temperature evolution
 * Temperature comparison between cities
